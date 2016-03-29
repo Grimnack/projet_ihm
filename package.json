@@ -1,0 +1,29 @@
+{
+  "name": "feature-blocs",
+  "version": "1.0.0",
+  "description": "feature permettant de gérer l'anotation et le classement d'infos dans des blocs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grimnack/projet_ihm.git"
+  },
+  "keywords": [
+    "jquery",
+    "js",
+    "ihm",
+    "lille1"
+  ],
+  "author": "Antoine Amara",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Grimnack/projet_ihm/issues"
+  },
+  "homepage": "https://github.com/Grimnack/projet_ihm#readme",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "jquery": "^2.2.2"
+  }
+}
