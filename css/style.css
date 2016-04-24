@@ -1,16 +1,18 @@
 body {
+  background: #3B3A34;
   font-family: "Helvetica", "Tahoma", "Open Sans";
 }
 
 #main, #main > div {
-  background-color: #434f9e;
-  color: white;
+  background: #FAF6DF;
+  color: #3B3A34;
 }
 
 #main {
-  borde-radius: 5px;
+  border-radius: 2px;
+  border: 10px #3B3A34 solid;
   margin-top: 80px;
-  padding: 5% 10%;
+  padding: 10% 10%;
 }
 
 #login_form {
@@ -19,4 +21,19 @@ body {
 
 h1 {
   margin-bottom: 0;
+  border-bottom: 2px #3B3A34 solid;
+}
+
+h4 {
+  font-weight: lighter;
+}
+
+#butt_login {
+  float: right;
+}
+
+.logo img {
+  border: 10px #3B3A34 solid;
+  margin-left: 100%;
+  width: 300px;
 }
