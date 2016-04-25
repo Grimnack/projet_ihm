@@ -9,34 +9,28 @@ Synthesizer.Selector = {
 // retourne le text selectionné.
 Synthesizer.Selector.getSelected = function() {
   var selectedText = '';
-  var parent = null;
+  var currentelmt = null;
 
   if(window.getSelection) {
     selectedText = window.getSelection();
     if(selectedText.rangeCount) {
-      parent = selectedText.getRangeAt(0).commonAncestorContainer;
-      if(parent.nodeType != 1) {
-        parent = parent.parentNode;
-      }
+      currentelmt = selectedText.getRangeAt(0).cloneRange();
     }
   }
   else if(document.getSelection) {
     selectedText = document.getSelection();
     if(selectedText.rangeCount) {
-      parent = selectedText.getRangeAt(0).commonAncestorContainer;
-      if(parent.nodeType != 1) {
-        parent = parent.parentNode;
-      }
+      currentelmt = selectedText.getRangeAt(0).cloneRange();
     }
   }
   else if(document.selection) {
     selectedText = document.selection.createRange().text;
-    if(selectedText.type != 'Control') {
-      parent = selectedText.createRange().parentElement();
+    if(selectedText.rangeCount) {
+      currentelmt = selectedText.getRangeAt(0).cloneRange();
     }
   }
 
-  Synthesizer.Selector.currentParent = parent;
+  Synthesizer.Selector.currentelmt = currentelmt;
 
   return selectedText;
 }
@@ -44,27 +38,30 @@ Synthesizer.Selector.getSelected = function() {
 // listener sur le relachement de la souris, il récupère le texte si celui-ci a été selectionné.
 Synthesizer.Selector.mouseup = function() {
   console.info('mouse up');
-  var selectedText = Synthesizer.Selector.getSelected();
-  Synthesizer.Selector.currentSelectedText = selectedText;
 
-  if(selectedText != '') {
+  var selectedText = Synthesizer.Selector.getSelected();
+
+  if(selectedText !== '' && selectedText !== Synthesizer.Selector.currentSelectedText) {
     if(Synthesizer.Selector.btn != undefined) {
-      if(selectedText = '') {
-        console.info('click outside, remove button');
-        Synthesizer.Selector.currentParent.suppressChild(Synthesizer.Selector.btn);
-      }
       console.info("bouton existant");
-      return;
+      Synthesizer.Selector.currentelmt.removeChild(Synthesizer.Selector.btn);
     }
+
     console.info('You selected: '+selectedText+'\n');
+    Synthesizer.Selector.currentSelectedText = selectedText;
     Synthesizer.Selector.btn = document.createElement("BUTTON");
     var btnText = document.createTextNode("important");
     Synthesizer.Selector.btn.appendChild(btnText);
     Synthesizer.Selector.btn.setAttribute("id", "importantbtn");
-    Synthesizer.Selector.currentParent.appendChild(Synthesizer.Selector.btn);
+    var span = document.createElement('span');
+    Synthesizer.Selector.currentelmt.surroundContents(span);
+    span.appendChild(Synthesizer.Selector.btn);
+    Synthesizer.Selector.currentelmt = span;
 
     $('#importantbtn').click(function() {
       console.info("important click");
+      Synthesizer.Selector.currentelmt.className = '';
+
     });
   }
 }
