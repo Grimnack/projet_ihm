@@ -34,6 +34,17 @@ h4 {
 
 .logo img {
   border: 10px #3B3A34 solid;
-  margin-left: 100%;
   width: 300px;
+  margin-left: 100%;
+}
+
+#adviser {
+  border: 5px #FAF6DF solid;
+  margin: 0 45%;
+  width: 10%;
+}
+
+.navbar-default {
+  background: #FAF6DF;
+  border-radius: 0;
 }
