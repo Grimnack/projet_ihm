@@ -21,9 +21,7 @@
       <a class="navbar-brand" href="../index.html">MimieMathiser</a>
     </div>
     <ul class="nav navbar-nav">
-      <li id="menu-item-editor"><a href="editor.html">Éditeur</a></li>
-      <li id="menu-item-load"><a href="select_files.html">Charger fichier</a></li>
-      <li><a href="signed_out.html">Déconnexion</a></li>
+      <li><a href="../index.html">Connexion</a></li>
     </ul>
   </div>
   </nav>
@@ -38,7 +36,17 @@
 <script src="../lib/jquery/js/jquery-1.12.3.min.js"></script>
 <!-- Bootstrap -->
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<!-- Adviser script -->
-<script src="../js/adviser.js"></script>
+
+<script>
+  $('#adviser').popover({
+    container: "body",
+    content: "Le saviez-vous ? L’envoûteur est la meilleure classe du MMORPG \
+    Guild Wars 2 !"
+  });
+
+  $(document).ready(function() {
+    $('#adviser').popover('show');
+  });
+</script>
 </body>
 </html>

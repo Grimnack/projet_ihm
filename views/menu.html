@@ -1,37 +1,48 @@
-<!doctype HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <title>lorem ipsum</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MimieMathiser — Accueil</title>
+
+  <!-- Bootstrap -->
   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Application -->
   <link rel="stylesheet" href="../css/style.css"/>
 </head>
-<body style="color:#FAF6DF" oncontextmenu="return false">
-  <div>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="../index.html">MimieMathiser</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a href="editor.html">Éditeur</a></li>
-          <li><a href="select_files.html">Sélection des fichiers</a></li>
-        </ul>
-      </div>
-    </nav>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">MimieMathiser</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="editor.html">Éditeur</a></li>
+      <li><a href="select_files.html">Charger fichier</a></li>
+      <li><a href="signed_out.html">Déconnexion</a></li>
+    </ul>
+  </div>
+  </nav>
 
-    <div>
+  <!-- Adviser -->
+  <div id="body" class="container">
+    <div class="row">
+        <img id="adviser" src="../img/mimie-mathy-logo.jpg" />
+    </div>
 
-
-      <div>
+    <div id="main" class="container" style="padding: 0;">
         <!--Colonne 2 -->
         <div class="container">
           <!---header-->
-          <h1> Titre</h1>
-          <a class="btn btn-primary" href="resume.html">Génerer résumé </a>
+          <h1>Titre</h1>
+          <a class="btn btn-primary" href="resume.html">Synthétiser</a>
         </div>
         <div class="container">
-          <div class="col-lg-11 context">
+          <div class="context">
             <h1>Apprendre a planter des choux</h1>
             <p class="context">Le chou est un légume que l’on trouve sous de nombreuses variétés et très facile à cultiver. L’entretien, du semis et plantation à la récolte, vous aidera à avoir de magnifiques choux.</p>
             <h2>Semis, plantation des choux</h2>
@@ -71,7 +82,6 @@
         </div>
       </div>
     </div>
-  </div>
   <footer>
   </footer>
 </div>
@@ -80,5 +90,19 @@
 <!-- Bootstrap -->
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/selector.js"></script>
+
+<script>
+  $('#adviser').popover({
+    container: "body",
+    content: "Ici, vous pouvez sélectionner des portions de texte que vous \
+    souhaitez étiquetter comme importantes. Une fois terminé, vous pouvez \
+    générer une version synthétique du document avec le bouton \
+    en un claquement de doigt !"
+  });
+
+  $(document).ready(function() {
+    $('#adviser').popover('show');
+  });
+</script>
 </body>
 </html>

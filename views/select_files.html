@@ -21,6 +21,7 @@
       <ul class="nav navbar-nav">
         <li><a href="editor.html">Éditeur</a></li>
         <li class="active"><a href="select_files.html">Charger fichier</a></li>
+        <li><a href="signed_out.html">Déconnexion</a></li>
       </ul>
     </div>
     </nav>
@@ -47,7 +48,7 @@
               Importer un fichier
             </label>
             <input type="file" id="upfile"/>
-            <button class="btn btn-default" onclick="impor()" type="button">
+            <button class="btn btn-default" type="button">
               Importer
             </button>
           </form>
@@ -59,6 +60,7 @@
     <script src="../lib/jquery/js/jquery-1.12.3.min.js"></script>
     <!-- Bootstrap -->
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
     <script>
       $('#adviser').popover({
         container: "body",
