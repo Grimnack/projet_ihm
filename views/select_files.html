@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MimieMathiser — Ouvrir un fichier</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+   <!-- Bootstrap -->
+   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+   <!-- Application -->
+   <link rel="stylesheet" href="../css/style.css"/>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="../index.html">MimieMathiser</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="editor.html">Éditeur</a></li>
+        <li class="active"><a href="select_files.html">Charger fichier</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+    <!-- Adviser -->
+    <div id="body" class="container">
+      <div class="row">
+          <img id="adviser" src="../img/mimie-mathy-logo.jpg" />
+      </div>
+
+
+    <div id="main" class="container">
+      <div class="row">
+        <div id="select_files" align="center">
+            <a href="selector"><img src="../text.png" class="file" /></a>
+            <a href="selector"><img src="../text.png" class="file" /></a>
+            <a href="selector"><img src="../text.png" class="file" /></a>
+            <a href="selector"><img src="../text.png" class="file" /></a>
+        </div>
+
+        <div id="import" class="row">
+          <form name="importform" method="post">
+          <label style="color: #FAF6DF" for="upfile">
+            Importer un fichier
+          </label>
+          <input type="file" id="upfile"/>
+          <button class="btn" onclick="impor()" type="button">
+            Importer
+          </button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../lib/jquery/js/jquery-1.12.3.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $("#adviser").popover({
+        container: "body",
+        text: "Ici, vous pouvez ouvrir un fichier déjà chargé précédemment en \
+        cliquant sur les miniatures. Sinon, vous pouvez importer un fichier."
+      });
+
+      $(document).ready(function() {
+        $("#adviser").popover('show');
+      });
+    </script>
+  </body>
+</html>
