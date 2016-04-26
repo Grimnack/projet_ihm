@@ -27,8 +27,16 @@ $(document).ready(function() {
       placement: 'bottom',
     });
 
+    $("#menu-item-load").popover({
+      container: "body",
+      content: "Ou là !",
+      html: true,
+      placement: 'bottom',
+    });
+
     setTimeout(function() {
       $("#menu-item-editor").popover('show');
+      $("#menu-item-load").popover('show');
     }, 1000);
   });
 });

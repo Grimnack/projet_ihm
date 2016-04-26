@@ -20,8 +20,7 @@
       </div>
       <ul class="nav navbar-nav">
         <li><a href="editor.html">Éditeur</a></li>
-        <li class="active"><a href="select_files.html">Selection des fichiers</a>
-        </li>
+        <li class="active"><a href="select_files.html">Charger fichier</a></li>
       </ul>
     </div>
     </nav>
@@ -42,16 +41,17 @@
             <a href="menu.html"><img src="../text.png" class="file" /></a>
         </div>
 
-        <div id="import" class="row">
-          <form name="importform" method="post">
-          <label style="color: #FAF6DF" for="upfile">
-            Importer un fichier
-          </label>
-          <input type="file" id="upfile"/>
-          <button class="btn" onclick="impor()" type="button">
-            Importer
-          </button>
-        </form>
+          <div id="import" class="row">
+            <form name="importform" method="post">
+            <label style="color: #FAF6DF" for="upfile">
+              Importer un fichier
+            </label>
+            <input type="file" id="upfile"/>
+            <button class="btn btn-default" onclick="impor()" type="button">
+              Importer
+            </button>
+          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -60,14 +60,14 @@
     <!-- Bootstrap -->
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script>
-      $("#adviser").popover({
+      $('#adviser').popover({
         container: "body",
-        text: "Ici, vous pouvez ouvrir un fichier déjà chargé précédemment en \
+        content: "Ici, vous pouvez ouvrir un fichier déjà chargé précédemment en \
         cliquant sur les miniatures. Sinon, vous pouvez importer un fichier."
       });
 
       $(document).ready(function() {
-        $("#adviser").popover('show');
+        $('#adviser').popover('show');
       });
     </script>
   </body>

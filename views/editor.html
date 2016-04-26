@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>MimieMathiser — Accueil</title>
+  <title>MimieMathiser — Éditeur</title>
 
   <!-- Bootstrap -->
   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -21,8 +21,8 @@
       <a class="navbar-brand" href="../index.html">MimieMathiser</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="editor.html">Éditeur</a></li>
-      <li><a href="select_files.html">Sélection des fichiers</a></li>
+      <li class="active"><a href="editor.html">Éditeur</a></li>
+      <li><a href="select_files.html">Charger fichier</a></li>
     </ul>
   </div>
   </nav>
@@ -32,21 +32,29 @@
         <img id="adviser" src="../img/mimie-mathy-logo.jpg" />
     </div>
 
-    <div class="row">
+    <div id="main" class="row">
       <div class="section">
         <h1>Nouvelle Note </h1>
         <form name="addNote" method="post" id="fnote">
-          <label for="title">Titre de la note : </label>
-          <input type="text" id="title"/>
-          <label for="courses">Matière : </label>
-          <select id="courses">
-            <option value="IHM">IHM</option>
-            <option value="CAR">CAR</option>
-            <option value="BI">BI</option>
-          </select>
-          <label for="content">Note : </label>
-          <textarea id="content"></textarea>
-          <button type="button" class="btn-succes">Valider</button>
+          <div class="form-group">
+            <label for="title">Titre de la note : </label>
+            <input class="form-control" type="text" id="title"/>
+          </div>
+          <div class="form-group">
+            <label for="courses">Matière : </label>
+            <select class="form-control" id="courses">
+              <option value="IHM">IHM</option>
+              <option value="CAR">CAR</option>
+              <option value="BI">BI</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="content">Note : </label>
+            <textarea id="content"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-success">Enregistrer</button>
+          </div>
         </form>
       </div>
     </div>
@@ -56,12 +64,20 @@
 <script src="../lib/jquery/js/jquery-1.12.3.min.js"></script>
 <!-- Bootstrap -->
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<!-- Adviser script -->
-<script src="../js/adviser.js"></script>
 <!-- CKEditor script -->
-<script src="../js/ckeditor/ckeditor.js"></script>
+<script src="../lib/ckeditor/ckeditor.js"></script>
 <script>
-					CKEDITOR.replace('content');
-				</script>
+	CKEDITOR.replace('content');
+</script>
+<script>
+  $('#adviser').popover({
+    container: "body",
+    content: "Vous avez commencé la rédaction d’une nouvelle note !"
+  });
+
+  $(document).ready(function() {
+    $('#adviser').popover('show');
+  });
+</script>
 </body>
 </html>

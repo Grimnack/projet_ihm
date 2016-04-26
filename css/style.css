@@ -14,13 +14,20 @@ body {
   padding: 10% 10%;
 }
 
+#main > * {
+  padding: 10px;
+}
+
 #login_form {
   margin-top: 60px;
 }
 
 h1 {
-  margin-bottom: 0;
   border-bottom: 2px #3B3A34 solid;
+}
+
+.app-title {
+  margin-bottom: 0;
 }
 
 h4 {
