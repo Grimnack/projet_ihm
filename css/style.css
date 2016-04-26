@@ -10,7 +10,6 @@ body {
 
 #main {
   border-radius: 2px;
-  border: 10px #3B3A34 solid;
   margin-top: 80px;
   padding: 10% 10%;
 }
@@ -34,17 +33,63 @@ h4 {
 
 .logo img {
   border: 10px #3B3A34 solid;
+  border-radius: 2px;
   width: 300px;
   margin-left: 100%;
 }
 
 #adviser {
   border: 5px #FAF6DF solid;
+  border-radius: 2px;
   margin: 0 45%;
   width: 10%;
 }
 
+#adviser.big {
+  margin: 0 40%;
+  width: 20%;
+}
+
 .navbar-default {
   background: #FAF6DF;
+  border: 1px solid #BAB7A6;
   border-radius: 0;
+}
+
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:focus,
+  .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #BAB7A6;
+}
+
+#textid {
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all .2s ease-in-out;
+}
+
+.textid {
+  display: inline-block;
+  margin: 0 auto;
+  position:relative;
+  padding: 0px;
+}
+
+#select_files img.file {
+  border: 5px #3B3A34 solid;
+  margin: 5px;
+  width: 150px;
+}
+
+#select_files img.file:hover {
+  cursor: pointer;
+  z-index:100;
+  transform: scale(2.1);
+}
+
+#import {
+  margin: 50px 40%;
 }
