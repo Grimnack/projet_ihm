@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MimieMathiser — Accueil</title>
+
+  <!-- Bootstrap -->
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Application -->
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">MimieMathiser</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="editor.html">Éditeur</a></li>
+      <li><a href="selectFiles.html">Sélection des fichiers</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <div id="body" class="container">
+    <div class="row">
+        <img id="adviser" src="../img/mimie-mathy-logo.jpg" />
+    </div>
+
+    <div class="row">
+      <div class="section">
+        <h1>Nouvelle Note </h1>
+        <form name="addNote" method="post" id="fnote">
+          <label for="title">Titre de la note : </label>
+          <input type="text" id="title"/>
+          <label for="courses">Matière : </label>
+          <select id="courses">
+            <option value="IHM">IHM</option>
+            <option value="CAR">CAR</option>
+            <option value="BI">BI</option>
+          </select>
+          <label for="content">Note : </label>
+          <textarea id="content"></textarea>
+          <button type="button" class="btn-succes">Valider</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+<!-- jQuery -->
+<script src="../lib/jquery/js/jquery-1.12.3.min.js"></script>
+<!-- Bootstrap -->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- Adviser script -->
+<script src="../js/adviser.js"></script>
+<!-- CKEditor script -->
+<script src="../js/ckeditor/ckeditor.js"></script>
+<script>
+					CKEDITOR.replace('content');
+				</script>
+</body>
+</html>
