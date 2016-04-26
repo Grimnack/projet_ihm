@@ -8,7 +8,7 @@ $(window).load(function(){
       if(selected.toString() != '') {
         btn = $('<button\>', {
           text: 'Important',
-          class: 'importantbtn',
+          class: 'importantbtn btn btn-primary',
           click: function() {
             $('.selected').attr('id', 'rightclick')
             $('.selected').attr('class', 'important_1')
@@ -21,7 +21,7 @@ $(window).load(function(){
               console.info(cl)
               btn = $('<button\>', {
                 text: '+',
-                class: 'important+',
+                class: 'important+ btn btn-primary',
                 click: function() {
                   classsplit = elmt.attr('class').split('_')
                   console.info(classsplit);
